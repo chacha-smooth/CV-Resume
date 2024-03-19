@@ -1,14 +1,10 @@
 
+  
 
-.resume{
-
-    border:solid;
-    border-color: orange; 
-}
-
-.your-details{
-    padding-top: 100px;
-
+.your-details,.experience{
+ 
+    padding:0px;
+    height: 100vh;
     border:solid;
     border-color: black;
 }
@@ -19,7 +15,7 @@ button{
 
 .two-column-grid{
     display:grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: minmax(0,40%) minmax(0,60%);
     
 }
 
@@ -46,13 +42,18 @@ button{
     grid-column: 1/-1;
 }
 
-.your-details{
-    padding:0px;
-    height: 100vh;
 
-}
+
 .resume{
-    height: 250px;
+
+    padding: 20px;
+    display:grid;
+    grid-template-columns: minmax(0px, 30%) minmax(auto, 70%);
+    column-gap: 10px;
+ 
+    border:solid;
+    border-color: orange; 
+
 }
 
 .save, .back{
@@ -80,3 +81,61 @@ button{
     align-items: center;
 }
 
+
+.fn-ln{
+    grid-column:1/-1;
+    justify-self: center;
+    font-size: 35px;
+}
+
+
+
+.job-title{
+    grid-column:1/-1;
+    justify-self: center;
+}
+
+.contact-title,.email, .phone,.address, .summary{
+    grid-column:1/2;
+    justify-self: center;
+    overflow:hidden;
+
+    
+}
+
+.profile-summary, .profile-summary-title{
+    grid-column:2/-1;
+
+ 
+}
+.format-container{
+    overflow-wrap: break-word;
+    overflow:hidden;
+    box-sizing: border-box;
+    display:block;
+    height:auto;
+    word-break: break-all;
+}
+
+
+
+
+
+/* Font Size */
+
+.fn-ln{
+    font-size: 38px;
+}
+.job-title{
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.email, .phone,.address{
+    font-size:14px;
+    
+}
+/* Font size for subtitles */
+.contact-title{
+    font-size: 16px;;
+}

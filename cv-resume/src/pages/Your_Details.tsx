@@ -1,17 +1,10 @@
 import { ChangeEventHandler, PropsWithChildren } from "react";
+import { yourDetail } from "../types";
 
 interface Props {
   handleAnyChange: (data: yourDetail) => void;
   inputGroup: yourDetail;
 }
-type yourDetail = {
-  jobTitle: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  address: string;
-};
 
 export default function Your_Details(props: PropsWithChildren<Props>) {
 
@@ -41,17 +34,19 @@ export default function Your_Details(props: PropsWithChildren<Props>) {
         CV Resume
       </div>
       <div className="detail-input-group">
-        <div className="form your-details-jt">
-          <label htmlFor="">Job Title</label>
-          <input type="text" onChange={handleTitle} value={inputGroup.jobTitle}/>
-        </div>
+
         <div className="form your-details-fn">
           <label htmlFor="">First Name</label>
           <input type="text" onChange={handleFirstName} value={inputGroup.firstName}/>
         </div>
+        
         <div className="form your-details-ln">
           <label htmlFor="">Last Name</label>
           <input type="text" onChange={handleLastName} value={inputGroup.lastName}/>
+        </div>
+        <div className="form your-details-jt">
+          <label htmlFor="">Job Title</label>
+          <input type="text" onChange={handleTitle} value={inputGroup.jobTitle}/>
         </div>
         <div className="form your-details-email">
           <label htmlFor="">Email</label>

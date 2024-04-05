@@ -1,0 +1,14 @@
+.sub-title{
+    font-size: 25px;
+}
+
+#summary{
+    border:2px solid red;
+    width: 95%;
+    display:flex;
+    justify-content: center;
+    box-sizing: border-box;
+    max-width: 95%;
+    min-height: 425px;
+}
+

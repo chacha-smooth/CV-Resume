@@ -1,0 +1,29 @@
+$dark-blue: #001b2e;
+$medium-blue: #294c60;
+$light-blue: #adb6c4;
+$tan-yellow: #ffefd3;
+$pink: #ffc49b;
+$border-radi: 30px;
+$border-curve-left: $border-radi 0px 0px $border-radi;
+$border-curve-right: 0px $border-radi $border-radi 0px;
+$header-width: 350px;
+$phone-screen: 922px;
+@mixin font($type) {
+  @if $type==0 {
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } @else if $type ==1 {
+    font-family: "Alegreya Sans", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }@else if $type ==3{
+    font-family: "Alegreya", sans-serif;
+    font-weight: 750;
+    font-style: normal;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Alegreya:wght@900&display=swap");

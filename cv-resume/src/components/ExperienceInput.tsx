@@ -29,18 +29,27 @@ export default function ExperienceInput(props: PropsWithChildren<Props>) {
 
   return (
     <li key={inputs.id}>
-      {!editButtonClicked ? (
+      {editButtonClicked && (
         <div className="experience-front">{inputs.experienceCompany}</div>
-      ) : (
-        <div className="experience-back">
-          <input className= "experience-jt"type="text" name= "experienceJobTitle" placeholder={inputs.experienceJobTitle} onChange={handleChange}/>
-          <input type="text"  className="experience-company" name="experienceCompany" placeholder={inputs.experienceCompany} onChange={handleChange} />
-          <input type="text"  className="date" name="experienceDate" placeholder={inputs.experienceDate} onChange={handleChange}/>
-          <textarea className="experience-points" name="experienceDescription" placeholder={inputs.experienceDescription} onChange={handleChange}></textarea>
-        </div>
-      )}
+      ) }
+
+      <div className="btn-section">
       <button onClick={handleEditClick}>{editIcon()}</button>
       <button onClick={handleDeleteOnclick}>{deleteIcon()}</button>
+      </div>
+
+      {!editButtonClicked && (
+        <div className="experience-back">
+          <label>Job Title</label>
+          <input className= "experience-jt"type="text" name= "experienceJobTitle" value={inputs.experienceJobTitle} onChange={handleChange}/>
+          <label >Company</label>
+          <input type="text"  className="experience-company" name="experienceCompany" value={inputs.experienceCompany} onChange={handleChange} />
+          <label htmlFor="">Start Date - End Date</label>
+          <input type="text"  className="date" name="experienceDate" value={inputs.experienceDate} onChange={handleChange}/>
+          <label htmlFor="">Description</label>
+          <textarea className="experience-points" name="experienceDescription" value={inputs.experienceDescription} onChange={handleChange}></textarea>
+        </div>
+      )}
     </li>
   );
 }

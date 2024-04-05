@@ -1,5 +1,5 @@
-import { yourDetail, yourResume } from "../types";
-
+import {yourResume } from "../types";
+// import "../../css/resume.css";
 export default function Resume({ resumeOutput }: { resumeOutput: yourResume }) {
   return (
     <div className="resume-background">
@@ -21,42 +21,57 @@ export default function Resume({ resumeOutput }: { resumeOutput: yourResume }) {
           {resumeOutput.yourDetail.email ||
           resumeOutput.yourDetail.phone ||
           resumeOutput.yourDetail.address ? (
-            <div className="contact-title format-container">Contact</div>
+            <div className="contact-title format-container first-column">Contact</div>
           ) : null}
 
           {resumeOutput.yourDetail.email ? (
-            <div className="email format-container">
+            <div className="email format-container first-column">
               {resumeOutput.yourDetail.email}
             </div>
           ) : null}
           {resumeOutput.yourDetail.phone ? (
-            <div className="phone format-container">
+            <div className="phone format-container first-column">
               {resumeOutput.yourDetail.phone}
             </div>
           ) : null}
           {resumeOutput.yourDetail.address ? (
-            <div className="address format-container">
+            <div className="address format-container first-column">
               {resumeOutput.yourDetail.address}
             </div>
           ) : null}
         </div>
 
         {resumeOutput.profileSummary ? (
-          <div className="profile-summary-title">Profile</div>
+          <div className="profile-summary-title second-column">Profile</div>
         ) : null}
         {resumeOutput.profileSummary ? (
-          <div className="profile-summary format-container">
+          <div className="profile-summary format-container second-column">
             {resumeOutput.profileSummary}
           </div>
         ) : null}
-        {/* <div className="lorem">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, ea
-          distinctio incidunt ut blanditiis nulla earum hic a recusandae ab ipsa
-          alias praesentium accusantium, numquam doloremque suscipit provident
-          totam nemo reiciendis eligendi voluptates id at? Suscipit consectetur
-          necessitatibus possimus temporibus soluta quis sint eaque, omnis
-          maiores fuga architecto sunt fugiat.
-        </div> */}
+
+        {resumeOutput.experienceArray.length!=0 && <div className="work-experience-title second-column"> Work Experience</div>}
+        {
+        
+        resumeOutput.experienceArray.map((item)=>{
+          return <>
+              <div className="job-position-title second-column">
+                {item.experienceJobTitle}
+              </div>
+              <div className="row second-column">
+              <div className="job-company-title">
+                {item.experienceCompany}
+              </div>
+              <div className="job-date-title">
+                {item.experienceDate}
+              </div>
+              </div>
+
+              <div className="job-list second-column">
+                {item.experienceDescription}
+              </div>
+          </>
+        })}
       </div>
     </div>
   );

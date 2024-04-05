@@ -1,4 +1,4 @@
-import "../../css/experience.css";
+// import "../../css/experience.css";
 import ExperienceInput from "../components/ExperienceInput";
 import { experienceInput } from "../types";
 import { useState, PropsWithChildren } from "react";
@@ -27,14 +27,20 @@ export default function Experience(props: PropsWithChildren<Props>) {
   };
 
   return (
-    <div className="experience">
+    <div className="section-one">
       <div className="title">Experience</div>
-      <div className="header">Your experience history.</div>
+      <div className="subtitle">Your experience history.</div>
 
-      <ul>
+      <ul className="experience-list">
         {/* returns a list of Experience Inputs */}
-        {experienceArray.length != 0 && experienceArray.map((item)=> <ExperienceInput inputs={item} deleteExperienceItem ={deleteExperienceItem} storeExperienceArray ={storeExperienceArray}/> )}
-
+        {experienceArray.length != 0 &&
+          experienceArray.map((item) => (
+            <ExperienceInput
+              inputs={item}
+              deleteExperienceItem={deleteExperienceItem}
+              storeExperienceArray={storeExperienceArray}
+            />
+          ))}
       </ul>
       <div className="add-experience">
         <div className="plus-btn">

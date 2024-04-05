@@ -1,5 +1,7 @@
 import { ChangeEventHandler, PropsWithChildren } from "react";
 import { yourDetail } from "../types";
+// import "../../css/your-details.css";
+import "../css/app.css";
 
 interface Props {
   handleAnyChange: (data: yourDetail) => void;
@@ -29,9 +31,9 @@ export default function Your_Details(props: PropsWithChildren<Props>) {
     handleAnyChange({ ...inputGroup, address: event.currentTarget.value });
   };
   return (
-    <div className="your-details">
+    <div className="section-one">
       <div className="title" style={{ margin: "0px" }}>
-        CV Resume
+        Contact Information
       </div>
       <div className="detail-input-group">
 

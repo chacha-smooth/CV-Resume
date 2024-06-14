@@ -1,0 +1,209 @@
+@import "_variables.scss";
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.btn-section {
+  padding: 15px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: $header-width;
+    min-width: 72px;
+    min-height: 42px;
+    height: auto;
+    margin-right: 10px;
+
+    border: 2px solid $dark-blue;
+    background-color: $dark-blue;
+    color: white;
+    transition: 0.5s;
+  }
+
+  button:hover {
+    color: lighten($light-blue, 20%);
+
+    background-color: lighten($dark-blue, 10%);
+  }
+
+  button:first-child {
+    border-radius: $border-curve-left;
+  }
+  button:last-child {
+    border-radius: $border-curve-right;
+  }
+}
+
+.header {
+  padding: 0px;
+  text-align: center;
+  font-size: 2.5em;
+  color: $dark-blue;
+  background-color: complement($light-blue);
+  font-weight: 750;
+  font-family: "Open Sans";
+  min-width: 100vw;
+}
+
+.two-column-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 40%) minmax(0, 60%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.ressume-background {
+  padding:10px;
+  .resume {
+    width:90%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: minmax(0px, 30%) minmax(auto, 70%);
+    column-gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    // border:solid;
+    // border-color: green;
+  }
+}
+
+input[type="text"] {
+  font-size: 18px;
+  padding: 5px;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+input[type="text"]:focus,
+input[type="text"]:focus-visible {
+  border: 2px solid darken($light-blue, 60%);
+  box-shadow: none;
+}
+
+label {
+  font-family: "Alegreya", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+*:focus {
+  outline: none;
+}
+
+.section-one {
+  min-height: 500px;
+  height: fit-content;
+  margin-left: 15px;
+  min-width: 250px;
+  margin-bottom: 15px;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  position: relative;
+
+  .title {
+    @include font(1);
+    font-size: clamp(2em, 2em, 3em);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .subtitle {
+    @include font(0);
+    font-size: clamp(1.1em, 1.1em, 2em);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+textarea {
+  width: 100%;
+  min-height: 364px;
+  max-width: 100%;
+}
+
+.experience-list {
+  list-style-type: none;
+  li {
+    margin-bottom: 25px;
+
+    textarea {
+      min-height: 75px;
+      max-width: 100%;
+    }
+
+    .btn-section {
+      display: flex;
+      margin-bottom: 20px;
+
+      button {
+        width: 30%;
+        min-height: auto;
+
+        height: 25px;
+        border-radius: 0px;
+        svg {
+          width: 10px;
+        }
+      }
+      padding-bottom: 0px;
+    }
+  }
+
+  .experience-front {
+    @include font(3);
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.experience-back {
+  display: flex;
+  flex-direction: column;
+}
+
+div[class^="add-"] {
+  display: flex;
+  align-items: center;
+  position: absolute;
+
+  bottom: 10px;
+
+  button {
+    margin-right: 10px;
+  }
+
+  .sub-text {
+    @include font(2);
+    font-size: 20px;
+  }
+}
+
+@media (max-width: $phone-screen) {
+  .two-column-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-one {
+    min-width: none;
+    width: 80%;
+  }
+  .resume-background {
+    display: flex;
+    justify-content: center;
+  }
+  .resume {
+    max-width: 80%;
+  }
+}
